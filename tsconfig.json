@@ -1,0 +1,8 @@
+{
+  "include": [
+    "./src/renderer/libs"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
