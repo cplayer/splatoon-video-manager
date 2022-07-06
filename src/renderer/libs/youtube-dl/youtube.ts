@@ -3,6 +3,8 @@ import * as path from 'path'
 import * as fs from 'fs'
 import {spawn} from 'child_process'
 
+declare var __static: string
+
 export function downloadYoutube (address) {
   // 'Darwin' on macOS, and 'Windows_NT' on Windows
   var filePath = ''
@@ -11,7 +13,6 @@ export function downloadYoutube (address) {
   } else if (os.type() === 'Darwin') {
     filePath = path.join(__static, '/yt-dlp_macos')
   }
-  console.log('filePath', filePath)
   let child = spawn(filePath, [
     '--skip-download',
     '--dump-json',
